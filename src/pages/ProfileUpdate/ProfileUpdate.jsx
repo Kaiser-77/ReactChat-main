@@ -38,7 +38,12 @@ const ProfileUpdate = () => {
       formData.append('name', name);
       formData.append('bio', bio);
       if (image) {
-        formData.append('avatar', image);
+        console.log("bussssssssssssssssssssssssss");
+        
+        formData.append('profilePic', image);
+      } else{
+        formData.append('age', 21);
+        formData.append('profilePic', 'no inmg');
       }
 
       const updatedProfile = await updateProfile(formData,accessToken);

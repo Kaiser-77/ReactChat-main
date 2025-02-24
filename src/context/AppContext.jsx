@@ -40,7 +40,7 @@ const AppContextProvider = (props) => {
                 if (user.name) {
                     navigate("/chat");
                 } else {
-                    navigate("/profile");
+                    navigate("/chat"); // profilupdate page
                 }
     
                
