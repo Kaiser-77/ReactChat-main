@@ -21,7 +21,7 @@ const Login = () => {
     try {
       if (currState === 'Sign up') {
         await registerUser(username, email, password);
-        alert('Signup successful! You can now log in.');
+        alert('To complete register, click the link send to your mail before login.');
         setCurrState('Login');
       } else {
         const tokens = await loginUser(email, password,setAccessToken);
