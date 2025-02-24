@@ -1,11 +1,11 @@
 import React from 'react'
 import { colors } from '../../constant/color'
 
-const AvatarImage = (profileUrl, name, clsName) => {
+const AvatarImage = ({profileUrl, name, clsName}) => {
 
 
     const getColor = (name) => {
-        return colors.filter(obj => obj.letter == name.charAt(0).toLowerCase())
+        return colors.find(item => item.letter === name.charAt(0).toLowerCase())?.color;
     }
 
     
@@ -14,6 +14,7 @@ const AvatarImage = (profileUrl, name, clsName) => {
     }
 
     return (
+        
         <div style={{ backgroundColor: getColor(name) }} className={clsName}>{name.charAt(0).toUpperCase()}</div>
     )
 }
