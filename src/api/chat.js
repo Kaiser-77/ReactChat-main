@@ -14,7 +14,7 @@ export const getChatList = async (accessToken) => {
   return await response.json();
 };
 
-export const searchUser = async (query,accessToken) => {
+export const getSearchUser = async (query,accessToken) => {
   const response = await fetch(`${API_BASE_URL}/search/user?name=${query}`, {
     method: 'GET',
     headers: { Authorization: `Bearer ${accessToken}` },
@@ -37,4 +37,5 @@ export const getChatMessages = async (senderId,recipientId,accessToken) => {
   }
   return await response.json();
 };
+
 

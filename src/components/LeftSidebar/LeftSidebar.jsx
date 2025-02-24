@@ -3,7 +3,7 @@ import './LeftSidebar.css';
 import assets from '../../assets/assets';
 import { useNavigate } from 'react-router-dom';
 import { getProfile } from '../../api/profile';
-import { getChatList, searchUser } from '../../api/chat';
+import { getChatList, getSearchUser } from '../../api/chat';
 import { logoutUser } from '../../api/auth';
 
 import { AppContext } from '../../context/AppContext'
@@ -71,7 +71,7 @@ const LeftSidebar = ({setSelectedUser}) => {
     if (input) {
       setShowSearch(true);
       try {
-        const users = await searchUser(input,accessToken);
+        const users = await getSearchUser(input,accessToken);
         setSearchResults(users.profileDtoList);
       } catch (error) {
         console.error('Error searching user:', error);
